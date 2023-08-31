@@ -16,9 +16,9 @@ print ("""<html>
         <label for="suma">Suma</label><br>
         <input type="radio" id="resta" name="operacion" value="Resta">
         <label for="resta">Restar</label><br>
-        <input type="radio" id="multiplicacion" name="operacion" value="Multiplicación">
+        <input type="radio" id="multiplicacion" name="operacion" value="Multiplicacion">
         <label for="multiplicacion">Multiplicar</label><br>
-        <input type="radio" id="division" name="operacion" value="División">
+        <input type="radio" id="division" name="operacion" value="Division">
         <label for="division">Dividir</label><br>
 
         <button type="submit">Enviar</button>

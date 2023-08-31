@@ -1,4 +1,6 @@
 import cgi
+from funciones import suma,resta,multiplicacion,division  #se importan las funciones de la ptra pestaña
+
 # Headers
 print ("Content-Type: text/html")
 print()
@@ -14,27 +16,30 @@ else:
     num2 = int(form_input["num2"].value)
     operacion = form_input["operacion"].value
 
+    a=num1
+    b=num2
+
     # Realizar operaciones de cálculo
     resultado = None
     if operacion == "Suma":
-        resultado = num1 + num2
+        resultado= suma(a,b)
     elif operacion == "Resta":
-        resultado = num1 - num2
-    elif operacion == "Multiplicación":
-        resultado = num1 * num2
-    elif operacion == "División":
+        resultado= resta(a,b)
+    elif operacion == "Multiplicacion":
+        resultado= multiplicacion(a,b)
+    elif operacion == "Division":
         if num2==0:
-            resultado = "Error: División por cero"
+            print("Error: División por cero") 
         else:
-            resultado = num1 / num2
+            resultado= division(a,b)
 
-# Generar la respuesta HTML
-print("<head><title>Resultado</title></head>")
-print("<body>")
-print("<h1>Resultado de la operación:</h1>")
-print(f"<p>{num1} {operacion} {num2} = {resultado}</p>")
+    # Generar la respuesta HTML
+    print("<head><title>Resultado</title></head>")
+    print("<body>")
+    print("<h1>Resultado de la operación:</h1>")
+    print(f"<p>{num1} {operacion} {num2} = {resultado}</p>")
 
-#print("<a href="calculadora.py">Volver atrás</a>")
+    #print("<a href="calculadora.py">Volver atrás</a>")
 
-print("</body>")
-print("</html>")
+    print("</body>")
+    print("</html>")
